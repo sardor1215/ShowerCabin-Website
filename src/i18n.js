@@ -12,7 +12,7 @@ i18n.use(initReactI18next).init({
     en: {
       translation: {
         ordernow: "ORDER NOW!",
-        introQ: "Why should You choose us ?",
+        introQ: "Why Should You Choose Us ?",
         contact: "Contact",
         introText: "Best options ever exist",
         introBoxT1: "CUSTOMER SERVICES",
@@ -26,6 +26,13 @@ i18n.use(initReactI18next).init({
         vidBox1: "EXPLORE MORE",
         vidBox2: "NEXT GENERATION OF",
         vidBox3: "SHOWER CABIN",
+        textpart2t: "Shower Cabin",
+        textpart2:
+          "Perfect Place With Perfect Cabin A shower cabin is a type of all-in-one shower unit that combines a shower, tray (or bath), enclosure, back panel, and other elements into a single, unifie structure. These cabins typically come equipped with luxurious spa-like amenities such as built-in steam units that are quite amazing and LED lights that provide chromatherapy",
+        aboutt1:
+          "You are welcome to visit our factory showroom which is open Monday to Friday 9.00am till 5.00pm but",
+        aboutt2:
+          "Please call our sales office first if you are travelling to see a particular item as not all items are on show.",
       },
     },
     tr: {
@@ -46,6 +53,13 @@ i18n.use(initReactI18next).init({
         vidBox1: "YENI NESİL",
         vidBox2: "DUŞ KABİNİ HAKKINDA",
         vidBox3: "DAHA FAZLASINI KESF EDIN",
+        textpart2t: "Duş Kabini",
+        textpart2:
+          "Mükemmel Kabin ile Mükemmel Yer Duşakabin, duş, tepsi (veya küvet), muhafaza, arka panel ve diğer unsurları tek bir yekpare yapıda birleştiren hepsi bir arada duş ünitesi türüdür. Bu kabinler tipik olarak oldukça şaşırtıcı dahili buhar üniteleri ve renk terapisi sağlayan LED ışıklar gibi lüks spa benzeri olanaklarla donatılmıştır.",
+        aboutt1:
+          "Pazartesiden Cumaya 09:00 - 17:00 saatleri arasında açık olan fabrika showroomumuzu ziyaret etmenizi bekliyoruz ancak",
+        aboutt2:
+          "Belirli bir ürünü görmek için seyahat ediyorsanız, tüm ürünler sergilenmediğinden, lütfen önce satış ofisimizi arayın.",
       },
     },
     ru: {
@@ -66,6 +80,13 @@ i18n.use(initReactI18next).init({
         vidBox1: "УЗНАТЬ БОЛЬШЕ",
         vidBox2: "СЛЕДУЮЩЕЕ ПОКОЛЕНИЕ",
         vidBox3: "ДУШЕВАЯ КАБИНА",
+        textpart2t: "Душевая Кабина",
+        textpart2:
+          "Идеальное место с идеальной кабиной Душевая кабина представляет собой тип универсального душевого блока, который объединяет душ, поддон (или ванну), ограждение, заднюю панель и другие элементы в единую унифицированную конструкцию. Эти каюты обычно оснащены роскошными спа-удобствами, такими как встроенные паровые установки, которые довольно удивительны, и светодиодное освещение, обеспечивающее хромотерапию.",
+        aboutt1:
+          "Приглашаем посетить наш заводской выставочный зал, который открыт с понедельника по пятницу с 9:00 до 17:00, но",
+        aboutt2:
+          "Пожалуйста, сначала позвоните в наш офис продаж, если вы путешествуете, чтобы увидеть конкретный товар, так как не все товары представлены на выставке.",
       },
     },
   },

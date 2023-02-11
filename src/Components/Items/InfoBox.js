@@ -1,15 +1,13 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 function InfoBox() {
+  const { t, i18n } = useTranslation();
   return (
-    <div class="grid md:grid-cols-3 bg-custompurple place-items-center">
+    <div class="grid md:grid-cols-3 font-rubik bg-custompurple place-items-center">
       <div class="w-72 p-4 items-center">
         <h2 className="font-semibold text-xl">About Us</h2>
-        <label class="d-inline">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s
-        </label>
+        <label class="d-inline">{t("aboutt1")}</label>
         {/* <a href="/about" class="">
           More
         </a> */}
@@ -23,7 +21,7 @@ function InfoBox() {
         </div>
       </div>
       <div class="w-72 p-5">
-        <h2>Newsletter</h2>
+        <h2>{t("aboutt2")}</h2>
       </div>
       <div class="w-72 p-5 ">
         <h2 className="font-semibold text-xl">Contact</h2>
@@ -50,7 +48,7 @@ function InfoBox() {
               </g>
             </svg>{" "}
           </div>
-          Best mar, 75007 Alsancak, Kyrenia
+          Merit Park,75007, Alsancak,Kyrenia
         </label>
         <label className="flex">
           <svg
@@ -75,7 +73,7 @@ function InfoBox() {
               ></path>{" "}
             </g>
           </svg>{" "}
-          08.00-23.00{" "}
+          09.00-17.00{" "}
         </label>
         <label className="flex ">
           <svg
@@ -101,7 +99,7 @@ function InfoBox() {
               ></path>{" "}
             </g>
           </svg>
-          <p>info@cabin.com</p>
+          <p>kyreaniacabin@gmail.com</p>
         </label>
         <label className="flex">
           <svg
@@ -127,7 +125,7 @@ function InfoBox() {
               ></path>{" "}
             </g>
           </svg>
-          <a href="tel:1234567">+90 533 123-45-67</a>
+          <a href="tel:1234567">+90 533 883-38-67</a>
         </label>
       </div>
     </div>

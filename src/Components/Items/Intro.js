@@ -4,11 +4,11 @@ import { useTranslation } from "react-i18next";
 function Intro() {
   const { t, i18n } = useTranslation();
   return (
-    <div className="bg-custompurple  ">
+    <div className="bg-custompurple font-rubik ">
       <div className="grid  md:grid-cols-2 items-center place-items-center pt-10">
         <div className="">
-          <p className="text-6xl pt-10   text-customdarkp ">SHOWER CABIN</p>
-          <p className="w-72  font-semibold  text-customdarkp mt-4 ml-5 ">
+          <p className="text-6xl pt-10   text-customdarkp ">KYRENIA's CABIN</p>
+          <p className="w-72   text-xl text-customdarkp mt-2 ml-2 ">
             {t("introText")}
           </p>
         </div>

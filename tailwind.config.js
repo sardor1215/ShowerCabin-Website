@@ -401,6 +401,8 @@ module.exports = {
         '"Courier New"',
         "monospace",
       ],
+      montserrat: ["Montserrat", "sans-serif"],
+      rubik: ["Rubik", "sans-serif"],
     },
     fontSize: {
       xs: ["0.75rem", { lineHeight: "1rem" }],

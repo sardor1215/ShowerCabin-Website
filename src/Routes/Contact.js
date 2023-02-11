@@ -9,7 +9,6 @@ function Contact() {
   return (
     <div>
       <Header />
-
       <Navbar />
 
       <div className="bg-custompurple pt-8 pb-8">

@@ -31,7 +31,7 @@ export default function Navbar() {
   return (
     <Disclosure
       as="nav"
-      className="bg-custompurple border-y-2 sticky top-3 z-50 border-y-customdarkp "
+      className="bg-custompurple border-y-2 sticky top-3 z-50 font-rubik border-y-customdarkp "
     >
       {({ open }) => (
         <>
@@ -61,58 +61,34 @@ export default function Navbar() {
                   <Link to="/">
                     <img
                       className="block h-8 w-auto lg:hidden"
-                      src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Shower_icon_-_Noun_Project_3670.svg/1200px-Shower_icon_-_Noun_Project_3670.svg.png"
                       alt="Your Company"
                     />
                     <img
                       className="hidden h-8 w-auto lg:block"
-                      src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Shower_icon_-_Noun_Project_3670.svg/1200px-Shower_icon_-_Noun_Project_3670.svg.png"
                       alt="Your Company"
                     />
                   </Link>
                 </div>
-                {/* <div className="hidden sm:ml-6 sm:block">
-                  <div className="flex space-x-4">
-                    {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current
-                            ? "bg-gray-900 text-white"
-                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                          "px-3 py-2 rounded-md text-sm font-medium"
-                        )}
-                        aria-current={item.current ? "page" : undefined}
-                      >
-                        {item.name}
-                      </a>
-                    ))}
-                  </div>
-                </div> */}
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                {/* <button
-                  type="button"
-                  className="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                >
-                  <span className="sr-only">View notifications</span>
-                  <p>icon</p>
-                </button> */}
-
                 {/* Profile dropdown */}
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <Link to="/contact">
+                      <Link
+                        to="/contact"
+                        className="mt-1 transition duration-150 hover:scale-110"
+                      >
                         <a
                           key={item.name}
                           href={item.href}
                           className={classNames(
                             item.current
                               ? "bg-customdarkp text-white"
-                              : "text-customdarkp hover:bg-customdarkp hover:text-white",
-                            "px-3 py-2 rounded-md text-sm font-medium"
+                              : "text-customdarkp hover:bg-customdarkp hover:text-white border-2  border-customdarkp ",
+                            "px-3  py-2 rounded-md text-sm font-medium "
                           )}
                           aria-current={item.current ? "page" : undefined}
                         >
@@ -123,7 +99,7 @@ export default function Navbar() {
                     <div className="">
                       <div className="flex gap-2    ">
                         <button
-                          className=" transition duration-150 hover:scale-125  rounded-lg py-1 px-2 text-customdarkp border-2 border-customdarkp"
+                          className="hover:bg-customdarkp hover:text-white transition duration-150 hover:scale-125  rounded-lg py-1 px-2 text-customdarkp border-2 border-customdarkp"
                           onClick={(e) => toggleHandler(e.target.value)}
                           value="en"
                         >
@@ -131,14 +107,14 @@ export default function Navbar() {
                         </button>
 
                         <button
-                          className="transition duration-150 hover:scale-125 rounded-lg py-1 px-2 text-customdarkp border-2 border-customdarkp"
+                          className="hover:bg-customdarkp hover:text-white transition duration-150 hover:scale-125 rounded-lg py-1 px-2 text-customdarkp border-2 border-customdarkp"
                           value="tr"
                           onClick={(e) => toggleHandler(e.target.value)}
                         >
                           TR
                         </button>
                         <button
-                          className="transition duration-150 hover:scale-125 rounded-lg py-1 px-2 text-customdarkp border-2 border-customdarkp"
+                          className="hover:bg-customdarkp hover:text-white transition duration-150 hover:scale-125 rounded-lg py-1 px-2 text-customdarkp border-2 border-customdarkp"
                           value="ru"
                           onClick={(e) => toggleHandler(e.target.value)}
                         >
@@ -148,69 +124,6 @@ export default function Navbar() {
                     </div>
                   </div>
                 </div>
-                {/* <Menu as="div" className="relative ml-3">
-                  <div>
-                    <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                      <span className="sr-only">Open user menu</span>
-                      <img
-                        className="h-8 w-8 rounded-full"
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                      />
-                    </Menu.Button>
-                  </div>
-                  <Transition
-                    as={Fragment}
-                    enter="transition ease-out duration-100"
-                    enterFrom="transform opacity-0 scale-95"
-                    enterTo="transform opacity-100 scale-100"
-                    leave="transition ease-in duration-75"
-                    leaveFrom="transform opacity-100 scale-100"
-                    leaveTo="transform opacity-0 scale-95"
-                  >
-                    <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(
-                              active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-sm text-gray-700"
-                            )}
-                          >
-                            Your Profile
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(
-                              active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-sm text-gray-700"
-                            )}
-                          >
-                            Settings
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(
-                              active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-sm text-gray-700"
-                            )}
-                          >
-                            Sign out
-                          </a>
-                        )}
-                      </Menu.Item>
-                    </Menu.Items>
-                  </Transition>
-                </Menu> */}
               </div>
             </div>
           </div>
@@ -218,7 +131,10 @@ export default function Navbar() {
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pt-2 pb-3">
               {navigation.map((item) => (
-                <Link to="/contact">
+                <Link
+                  to="/contact"
+                  className="transition duration-150 hover:scale-110"
+                >
                   <Disclosure.Button
                     // onClick={handleScroll}
                     key={item.name}
@@ -236,6 +152,32 @@ export default function Navbar() {
                   </Disclosure.Button>
                 </Link>
               ))}
+              <div className="">
+                <div className="flex gap-2    ">
+                  <button
+                    className="hover:bg-customdarkp hover:text-white transition duration-150 hover:scale-125  rounded-lg py-1 px-2 text-customdarkp border-2 border-customdarkp"
+                    onClick={(e) => toggleHandler(e.target.value)}
+                    value="en"
+                  >
+                    ENG
+                  </button>
+
+                  <button
+                    className="hover:bg-customdarkp hover:text-white transition duration-150 hover:scale-125 rounded-lg py-1 px-2 text-customdarkp border-2 border-customdarkp"
+                    value="tr"
+                    onClick={(e) => toggleHandler(e.target.value)}
+                  >
+                    TR
+                  </button>
+                  <button
+                    className="hover:bg-customdarkp hover:text-white transition duration-150 hover:scale-125 rounded-lg py-1 px-2 text-customdarkp border-2 border-customdarkp"
+                    value="ru"
+                    onClick={(e) => toggleHandler(e.target.value)}
+                  >
+                    RU
+                  </button>
+                </div>
+              </div>
             </div>
           </Disclosure.Panel>
         </>
