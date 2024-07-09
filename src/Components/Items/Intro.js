@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+let logoHuge = process.env.PUBLIC_URL + "/images/logo.png";
 
 function Intro() {
   const { t, i18n } = useTranslation();
@@ -7,14 +8,15 @@ function Intro() {
     <div className="bg-custompurple font-rubik ">
       <div className="grid  md:grid-cols-2 items-center place-items-center pt-10">
         <div className="">
-          <p className="text-6xl pt-10   text-customdarkp ">KYRENIA's CABIN</p>
+          <p className="text-6xl pt-10   text-customdarkp ">Orba Duşakabin</p>
           <p className="w-72   text-xl text-customdarkp mt-2 ml-2 ">
             {t("introText")}
           </p>
         </div>
         <img
           className="rounded-full   h-96"
-          src="https://us.123rf.com/450wm/anatolir/anatolir2208/anatolir220800949/anatolir220800949.jpg?ver=6"
+          // src="https://us.123rf.com/450wm/anatolir/anatolir2208/anatolir220800949/anatolir220800949.jpg?ver=6"
+          src={logoHuge}
         ></img>
       </div>
       <div class="container  px-6 mx-auto">

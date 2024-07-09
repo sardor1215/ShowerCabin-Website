@@ -48,7 +48,7 @@ function InfoBox() {
               </g>
             </svg>{" "}
           </div>
-          Merit Park,75007, Alsancak,Kyrenia
+          Karaoğlanoğlu caddesi 47/c, Alsancak, Kyrenia, Cyprus
         </label>
         <label className="flex">
           <svg
@@ -73,7 +73,7 @@ function InfoBox() {
               ></path>{" "}
             </g>
           </svg>{" "}
-          09.00-17.00{" "}
+          08:00 - 18:00{" "}
         </label>
         <label className="flex ">
           <svg
@@ -99,7 +99,7 @@ function InfoBox() {
               ></path>{" "}
             </g>
           </svg>
-          <p>kyreaniacabin@gmail.com</p>
+          <p>orbashower@gmail.com</p>
         </label>
         <label className="flex">
           <svg
@@ -125,7 +125,7 @@ function InfoBox() {
               ></path>{" "}
             </g>
           </svg>
-          <a href="tel:1234567">+90 533 883-38-67</a>
+          <a href="tel:+905338513075">+90 533-851-30-75</a>
         </label>
       </div>
     </div>

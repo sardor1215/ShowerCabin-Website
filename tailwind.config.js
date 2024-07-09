@@ -13,7 +13,7 @@ module.exports = {
     },
     supports: {},
     colors: ({ colors }) => ({
-      custompurple: "#f3f3f5",
+      custompurple: "#d2d4d1",
       customdarkp: "#523be4",
       inherit: colors.inherit,
       current: colors.current,

@@ -11,12 +11,12 @@ function Header() {
         </p>
       </div>
       <div className=" font-rubik text-customdarkp">
-        LIFE IS BETTER AT THE CABIN!
+        FREEDOM STARTS IN SHOWER
       </div>
       <div className="">
         <a className=" text-customdarkp   font-montserrat" href="tel:1234567">
           <p className="hover:scale-125 hover:text-blue-800 ease-in-out duration-300 ">
-            +90 533 883-38-67
+            +90 533-851-30-75
           </p>
         </a>
       </div>

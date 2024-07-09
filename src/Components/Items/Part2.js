@@ -1,12 +1,12 @@
 import React from "react";
 import Carousel from "./Carousel";
 import { useTranslation } from "react-i18next";
-const slides = [
-  "https://pca.gr/wp-content/uploads/2021/02/0715_PCA_Shower-cabins_A04_4200K-min-433x516.jpg",
-  "https://i.pinimg.com/originals/5d/b8/0f/5db80f6910a3276712ea6b8f6d9b2b29.png",
-  "https://images.victoriaplum.com/vp_prod_images/c68f898d-36e8-4438-9a11-38f9824c70ba.jpg?auto=format%2Ccompress&q=55&w=600",
-  "https://mineraskifer.no/app/uploads/2021/06/Bad-hytte-gra%CC%8A-fliser_02-819x1024.jpeg",
-];
+let a1 = process.env.PUBLIC_URL + "/images/1.jpg";
+let a2 = process.env.PUBLIC_URL + "/images/2.jpg";
+let a3 = process.env.PUBLIC_URL + "/images/3.jpg";
+let a4 = process.env.PUBLIC_URL + "/images/4.jpg";
+let a5 = process.env.PUBLIC_URL + "/images/5.jpg";
+const slides = [a1, a2, a3, a4, a5];
 
 function Part2() {
   const { t, i18n } = useTranslation();

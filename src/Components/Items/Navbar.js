@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+let logoHuge = process.env.PUBLIC_URL + "/images/imagesa.png";
 
 const lngs = [{ code: "en" }, { code: "tr" }, { code: "ru" }];
 
@@ -61,12 +62,14 @@ export default function Navbar() {
                   <Link to="/">
                     <img
                       className="block h-8 w-auto lg:hidden"
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Shower_icon_-_Noun_Project_3670.svg/1200px-Shower_icon_-_Noun_Project_3670.svg.png"
+                      // src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Shower_icon_-_Noun_Project_3670.svg/1200px-Shower_icon_-_Noun_Project_3670.svg.png"
+                      src={logoHuge}
                       alt="Your Company"
                     />
                     <img
-                      className="hidden h-8 w-auto lg:block"
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Shower_icon_-_Noun_Project_3670.svg/1200px-Shower_icon_-_Noun_Project_3670.svg.png"
+                      className="hidden h-12 rounded-md w-auto lg:block"
+                      // src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Shower_icon_-_Noun_Project_3670.svg/1200px-Shower_icon_-_Noun_Project_3670.svg.png"
+                      src={logoHuge}
                       alt="Your Company"
                     />
                   </Link>
