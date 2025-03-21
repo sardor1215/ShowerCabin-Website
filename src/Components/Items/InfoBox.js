@@ -1,132 +1,198 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 function InfoBox() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
+
   return (
-    <div class="grid md:grid-cols-3 font-rubik bg-custompurple place-items-center">
-      <div class="w-72 p-4 items-center">
-        <h2 className="font-semibold text-xl">About Us</h2>
-        <label class="d-inline">{t("aboutt1")}</label>
-        {/* <a href="/about" class="">
-          More
-        </a> */}
-        <div class="pt-2 ">
-          <a href="https://www.facebook.com/">
-            <i class="fa-brands fa-facebook text-left"></i>
-          </a>
-          <a href="https://www.instagram.com/">
-            <i class="fa-brands fa-instagram text-left"></i>
-          </a>
+    <div className="bg-white dark:bg-neutral-900 rounded-2xl shadow-soft overflow-hidden">
+      <div className="container mx-auto px-4 py-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-3xl font-bold text-neutral-900 dark:text-white">
+            {t("aboutTitle") || "About Us"}
+          </h2>
+          <p className="mt-4 max-w-2xl mx-auto text-neutral-600 dark:text-neutral-400">
+            {t("aboutSubtitle") || "Learn more about our company and services"}
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {/* About Us Column */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="bg-neutral-50 dark:bg-neutral-800 p-6 rounded-xl shadow-soft"
+          >
+            <h3 className="font-bold text-xl text-neutral-900 dark:text-white mb-4">
+              {t("aboutUs") || "About Us"}
+            </h3>
+            <p className="text-neutral-700 dark:text-neutral-300 mb-6">
+              {t("aboutt1")}
+            </p>
+            <div className="pt-2 flex space-x-4">
+              <a
+                href="https://www.facebook.com/"
+                className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://www.instagram.com/"
+                className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </a>
+            </div>
+          </motion.div>
+
+          {/* Our Mission Column */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="bg-neutral-50 dark:bg-neutral-800 p-6 rounded-xl shadow-soft"
+          >
+            <h3 className="font-bold text-xl text-neutral-900 dark:text-white mb-4">
+              {t("ourMission") || "Our Mission"}
+            </h3>
+            <p className="text-neutral-700 dark:text-neutral-300">
+              {t("aboutt2")}
+            </p>
+          </motion.div>
+
+          {/* Contact Information Column */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="bg-neutral-50 dark:bg-neutral-800 p-6 rounded-xl shadow-soft"
+          >
+            <h3 className="font-bold text-xl text-neutral-900 dark:text-white mb-4">
+              {t("contact") || "Contact"}
+            </h3>
+
+            <div className="space-y-4">
+              <div className="flex items-start">
+                <svg
+                  className="w-5 h-5 mt-1 text-primary-600 dark:text-primary-400 flex-shrink-0"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M12 2C15.87 2 19 5.13 19 9C19 14.25 12 22 12 22C12 22 5 14.25 5 9C5 5.13 8.13 2 12 2ZM12 11.5C13.38 11.5 14.5 10.38 14.5 9C14.5 7.62 13.38 6.5 12 6.5C10.62 6.5 9.5 7.62 9.5 9C9.5 10.38 10.62 11.5 12 11.5Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <span className="ml-2 text-neutral-700 dark:text-neutral-300">
+                  Karaoğlanoğlu caddesi 47/c, Alsancak, Kyrenia, Cyprus
+                </span>
+              </div>
+
+              <div className="flex items-start">
+                <svg
+                  className="w-5 h-5 mt-1 text-primary-600 dark:text-primary-400 flex-shrink-0"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M12 2C6.49 2 2 6.49 2 12C2 17.51 6.49 22 12 22C17.51 22 22 17.51 22 12C22 6.49 17.51 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12.25 7C12.25 6.59 11.91 6.25 11.5 6.25C11.09 6.25 10.75 6.59 10.75 7V12.75C10.75 13.16 11.09 13.5 11.5 13.5H15.5C15.91 13.5 16.25 13.16 16.25 12.75C16.25 12.34 15.91 12 15.5 12H12.25V7Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <span className="ml-2 text-neutral-700 dark:text-neutral-300">
+                  08:00 - 18:00
+                </span>
+              </div>
+
+              <div className="flex items-start">
+                <svg
+                  className="w-5 h-5 mt-1 text-primary-600 dark:text-primary-400 flex-shrink-0"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M19.3 16.9C18.4 16.9 17.5 16.7 16.7 16.5C16.4 16.4 16 16.5 15.8 16.7L13.9 18.6C11.4 17.5 9 15.1 7.9 12.6L9.8 10.7C10 10.5 10.1 10.1 10 9.8C9.8 9 9.6 8.1 9.6 7.2C9.6 6.6 9.1 6 8.4 6H5.6C4.9 6 4 6.3 4 7.2C4 15.1 10.8 22 18.7 22C19.5 22 20 21.1 20 20.4V17.6C20 16.9 19.4 16.4 18.7 16.4L19.3 16.9Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <a
+                  href="tel:+905338513075"
+                  className="ml-2 text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 transition-colors"
+                >
+                  +90 533-851-30-75
+                </a>
+              </div>
+
+              <div className="flex items-start">
+                <svg
+                  className="w-5 h-5 mt-1 text-primary-600 dark:text-primary-400 flex-shrink-0"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 6L12 11L4 6H20ZM4 18V8L12 13L20 8V18H4Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <a
+                  href="mailto:orbashower@gmail.com"
+                  className="ml-2 text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 transition-colors"
+                >
+                  orbashower@gmail.com
+                </a>
+              </div>
+            </div>
+          </motion.div>
         </div>
-      </div>
-      <div class="w-72 p-5">
-        <h2>{t("aboutt2")}</h2>
-      </div>
-      <div class="w-72 p-5 ">
-        <h2 className="font-semibold text-xl">Contact</h2>
-        <label className="flex">
-          <div className="w-6 h-6">
-            <svg
-              viewBox="0 0 1024 1024"
-              fill="#000000"
-              class="icon"
-              version="1.1"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-              <g
-                id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></g>
-              <g id="SVGRepo_iconCarrier">
-                <path
-                  d="M512 1012.8c-253.6 0-511.2-54.4-511.2-158.4 0-92.8 198.4-131.2 283.2-143.2h3.2c12 0 22.4 8.8 24 20.8 0.8 6.4-0.8 12.8-4.8 17.6-4 4.8-9.6 8.8-16 9.6-176.8 25.6-242.4 72-242.4 96 0 44.8 180.8 110.4 463.2 110.4s463.2-65.6 463.2-110.4c0-24-66.4-70.4-244.8-96-6.4-0.8-12-4-16-9.6-4-4.8-5.6-11.2-4.8-17.6 1.6-12 12-20.8 24-20.8h3.2c85.6 12 285.6 50.4 285.6 143.2 0.8 103.2-256 158.4-509.6 158.4z m-16.8-169.6c-12-11.2-288.8-272.8-288.8-529.6 0-168 136.8-304.8 304.8-304.8S816 145.6 816 313.6c0 249.6-276.8 517.6-288.8 528.8l-16 16-16-15.2zM512 56.8c-141.6 0-256.8 115.2-256.8 256.8 0 200.8 196 416 256.8 477.6 61.6-63.2 257.6-282.4 257.6-477.6C768.8 172.8 653.6 56.8 512 56.8z m0 392.8c-80 0-144.8-64.8-144.8-144.8S432 160 512 160c80 0 144.8 64.8 144.8 144.8 0 80-64.8 144.8-144.8 144.8zM512 208c-53.6 0-96.8 43.2-96.8 96.8S458.4 401.6 512 401.6c53.6 0 96.8-43.2 96.8-96.8S564.8 208 512 208z"
-                  fill=""
-                ></path>
-              </g>
-            </svg>{" "}
-          </div>
-          Karaoğlanoğlu caddesi 47/c, Alsancak, Kyrenia, Cyprus
-        </label>
-        <label className="flex">
-          <svg
-            className="w-6 h-6"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g
-              id="SVGRepo_tracerCarrier"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></g>
-            <g id="SVGRepo_iconCarrier">
-              {" "}
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4ZM2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM11.8284 6.75736C12.3807 6.75736 12.8284 7.20507 12.8284 7.75736V12.7245L16.3553 14.0653C16.8716 14.2615 17.131 14.8391 16.9347 15.3553C16.7385 15.8716 16.1609 16.131 15.6447 15.9347L11.4731 14.349C11.085 14.2014 10.8284 13.8294 10.8284 13.4142V7.75736C10.8284 7.20507 11.2761 6.75736 11.8284 6.75736Z"
-                fill="#0F1729"
-              ></path>{" "}
-            </g>
-          </svg>{" "}
-          08:00 - 18:00{" "}
-        </label>
-        <label className="flex ">
-          <svg
-            className="w-6 h-6"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g
-              id="SVGRepo_tracerCarrier"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></g>
-            <g id="SVGRepo_iconCarrier">
-              {" "}
-              <path
-                d="M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12ZM16 12V13.5C16 14.8807 17.1193 16 18.5 16V16C19.8807 16 21 14.8807 21 13.5V12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21H16"
-                stroke="#000000"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>{" "}
-            </g>
-          </svg>
-          <p>orbashower@gmail.com</p>
-        </label>
-        <label className="flex">
-          <svg
-            className="w-6 h-6"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            stroke="#000000"
-          >
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g
-              id="SVGRepo_tracerCarrier"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></g>
-            <g id="SVGRepo_iconCarrier">
-              {" "}
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M8.40894 3.94109C7.73727 3.44596 7.28496 3.33417 7.04226 3.38154C6.04101 3.57694 5.44749 3.96671 4.64337 4.77082C3.54575 5.86842 3.01318 6.68799 3.24513 7.93061C3.51219 9.36128 4.81689 11.5448 8.41291 15.1409C12.0087 18.7366 14.2054 20.0551 15.6441 20.3277C16.3108 20.4541 16.8185 20.3553 17.2741 20.1309C17.7612 19.891 18.2302 19.4872 18.7681 18.9258C19.2452 18.4279 19.5347 18.0804 19.7373 17.7385C19.9303 17.4128 20.0671 17.0527 20.1728 16.5118C20.2202 16.2691 20.1084 15.8168 19.6132 15.145C19.1513 14.5185 18.4997 13.8963 17.8973 13.3884C17.4998 13.0532 16.8848 13.0318 16.388 13.4037L14.8697 14.5404C13.5001 15.5656 11.5864 15.4188 10.3781 14.2104L9.34333 13.1757C8.13502 11.9674 7.98816 10.0537 9.0134 8.68411L10.15 7.16583C10.5219 6.66902 10.5005 6.05402 10.1653 5.65651C9.65746 5.05425 9.03533 4.40283 8.40894 3.94109ZM9.59567 2.33122C10.4051 2.9279 11.1441 3.71478 11.6943 4.3672C12.6971 5.55642 12.6153 7.20992 11.7511 8.3644L10.6145 9.88268C10.191 10.4483 10.2458 11.2497 10.7575 11.7615L11.7923 12.7962C12.3041 13.308 13.1054 13.3627 13.6711 12.9393L15.1894 11.8027C16.3439 10.9385 17.9973 10.8566 19.1865 11.8593C19.8391 12.4095 20.6262 13.1486 21.223 13.9582C21.7864 14.7225 22.3533 15.7809 22.1357 16.8953C21.9959 17.6108 21.7906 18.1965 21.4579 18.758C21.1348 19.3034 20.715 19.7848 20.2122 20.3095C19.6296 20.9176 18.9653 21.5274 18.1578 21.9251C17.3189 22.3383 16.3708 22.5011 15.2716 22.2928C13.1786 21.8961 10.6038 20.1601 6.99869 16.5551C3.39388 12.9502 1.66901 10.3864 1.27909 8.2976C0.854079 6.02071 2.03716 4.54859 3.22916 3.3566C4.21375 2.37202 5.14736 1.71361 6.65918 1.41857C7.7733 1.20114 8.83152 1.76792 9.59567 2.33122Z"
-                fill="#0F1729"
-              ></path>{" "}
-            </g>
-          </svg>
-          <a href="tel:+905338513075">+90 533-851-30-75</a>
-        </label>
       </div>
     </div>
   );

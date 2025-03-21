@@ -600,6 +600,9 @@ video {
 .h-8 {
   height: 2rem;
 }
+.h-12 {
+  height: 3rem;
+}
 .w-3 {
   width: 0.75rem;
 }
@@ -722,7 +725,7 @@ video {
 }
 .bg-custompurple {
   --tw-bg-opacity: 1;
-  background-color: rgb(243 243 245 / var(--tw-bg-opacity));
+  background-color: rgb(210 212 209 / var(--tw-bg-opacity));
 }
 .bg-white\/80 {
   background-color: rgb(255 255 255 / 0.8);
@@ -762,9 +765,9 @@ video {
 .p-5 {
   padding: 1.25rem;
 }
-.py-6 {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 .py-2 {
   padding-top: 0.5rem;

@@ -1,9 +1,108 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   presets: [],
-  darkMode: "media", // or 'class'
   theme: {
+    extend: {
+      colors: {
+        primary: {
+          50: "#ecfeff",
+          100: "#cffafe",
+          200: "#a5f3fc",
+          300: "#67e8f9",
+          400: "#22d3ee",
+          500: "#06b6d4",
+          600: "#0891b2",
+          700: "#0e7490",
+          800: "#155e75",
+          900: "#164e63",
+        },
+        secondary: {
+          50: "#fdf4ff",
+          100: "#fae8ff",
+          200: "#f5d0fe",
+          300: "#f0abfc",
+          400: "#e879f9",
+          500: "#d946ef",
+          600: "#c026d3",
+          700: "#a21caf",
+          800: "#86198f",
+          900: "#701a75",
+        },
+        neutral: {
+          50: "#fafafa",
+          100: "#f5f5f5",
+          200: "#e5e5e5",
+          300: "#d4d4d4",
+          400: "#a3a3a3",
+          500: "#737373",
+          600: "#525252",
+          700: "#404040",
+          800: "#262626",
+          900: "#171717",
+        },
+        custompurple: "#f0f8ff",
+        customdarkp: "#0891b2",
+      },
+      animation: {
+        "fade-in": "fadeIn 1s ease-in-out",
+        "slide-up": "slideUp 0.8s ease-out",
+        "slide-in": "slideIn 0.8s ease-out",
+        "bounce-slow": "bounce 3s infinite",
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        slideUp: {
+          "0%": { transform: "translateY(20px)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
+        },
+        slideIn: {
+          "0%": { transform: "translateX(-20px)", opacity: "0" },
+          "100%": { transform: "translateX(0)", opacity: "1" },
+        },
+      },
+      fontFamily: {
+        sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: [
+          "Poppins",
+          "Inter",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
+        ],
+        rubik: ["Rubik", "sans-serif"],
+      },
+      fontSize: {
+        xs: ["0.75rem", { lineHeight: "1rem" }],
+        sm: ["0.875rem", { lineHeight: "1.25rem" }],
+        base: ["1rem", { lineHeight: "1.5rem" }],
+        lg: ["1.125rem", { lineHeight: "1.75rem" }],
+        xl: ["1.25rem", { lineHeight: "1.75rem" }],
+        "2xl": ["1.5rem", { lineHeight: "2rem" }],
+        "3xl": ["1.875rem", { lineHeight: "2.25rem" }],
+        "4xl": ["2.25rem", { lineHeight: "2.5rem" }],
+        "5xl": ["3rem", { lineHeight: "1" }],
+        "6xl": ["3.75rem", { lineHeight: "1" }],
+      },
+      boxShadow: {
+        soft: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+        strong:
+          "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+      },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "hero-pattern": "url('/public/images/1.jpg')",
+      },
+      borderRadius: {
+        xl: "1rem",
+        "2xl": "1.5rem",
+        "3xl": "2rem",
+      },
+    },
     screens: {
       sm: "640px",
       md: "768px",
@@ -13,8 +112,6 @@ module.exports = {
     },
     supports: {},
     colors: ({ colors }) => ({
-      custompurple: "#d2d4d1",
-      customdarkp: "#523be4",
       inherit: colors.inherit,
       current: colors.current,
       transparent: colors.transparent,
@@ -23,7 +120,6 @@ module.exports = {
       slate: colors.slate,
       gray: colors.gray,
       zinc: colors.zinc,
-      neutral: colors.neutral,
       stone: colors.stone,
       red: colors.red,
       orange: colors.orange,
@@ -366,70 +462,6 @@ module.exports = {
       0: "0",
       DEFAULT: "1",
     },
-    fontFamily: {
-      sans: [
-        "ui-sans-serif",
-        "system-ui",
-        "-apple-system",
-        "BlinkMacSystemFont",
-        '"Segoe UI"',
-        "Roboto",
-        '"Helvetica Neue"',
-        "Arial",
-        '"Noto Sans"',
-        "sans-serif",
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-        '"Noto Color Emoji"',
-      ],
-      serif: [
-        "ui-serif",
-        "Georgia",
-        "Cambria",
-        '"Times New Roman"',
-        "Times",
-        "serif",
-      ],
-      mono: [
-        "ui-monospace",
-        "SFMono-Regular",
-        "Menlo",
-        "Monaco",
-        "Consolas",
-        '"Liberation Mono"',
-        '"Courier New"',
-        "monospace",
-      ],
-      montserrat: ["Montserrat", "sans-serif"],
-      rubik: ["Rubik", "sans-serif"],
-    },
-    fontSize: {
-      xs: ["0.75rem", { lineHeight: "1rem" }],
-      sm: ["0.875rem", { lineHeight: "1.25rem" }],
-      base: ["1rem", { lineHeight: "1.5rem" }],
-      lg: ["1.125rem", { lineHeight: "1.75rem" }],
-      xl: ["1.25rem", { lineHeight: "1.75rem" }],
-      "2xl": ["1.5rem", { lineHeight: "2rem" }],
-      "3xl": ["1.875rem", { lineHeight: "2.25rem" }],
-      "4xl": ["2.25rem", { lineHeight: "2.5rem" }],
-      "5xl": ["3rem", { lineHeight: "1" }],
-      "6xl": ["3.75rem", { lineHeight: "1" }],
-      "7xl": ["4.5rem", { lineHeight: "1" }],
-      "8xl": ["6rem", { lineHeight: "1" }],
-      "9xl": ["8rem", { lineHeight: "1" }],
-    },
-    fontWeight: {
-      thin: "100",
-      extralight: "200",
-      light: "300",
-      normal: "400",
-      medium: "500",
-      semibold: "600",
-      bold: "700",
-      extrabold: "800",
-      black: "900",
-    },
     gap: ({ theme }) => theme("spacing"),
     gradientColorStops: ({ theme }) => theme("colors"),
     gridAutoColumns: {
@@ -581,34 +613,6 @@ module.exports = {
       "3/4": "75%",
       full: "100%",
     }),
-    keyframes: {
-      spin: {
-        to: {
-          transform: "rotate(360deg)",
-        },
-      },
-      ping: {
-        "75%, 100%": {
-          transform: "scale(2)",
-          opacity: "0",
-        },
-      },
-      pulse: {
-        "50%": {
-          opacity: ".5",
-        },
-      },
-      bounce: {
-        "0%, 100%": {
-          transform: "translateY(-25%)",
-          animationTimingFunction: "cubic-bezier(0.8,0,1,1)",
-        },
-        "50%": {
-          transform: "none",
-          animationTimingFunction: "cubic-bezier(0,0,0.2,1)",
-        },
-      },
-    },
     letterSpacing: {
       tighter: "-0.05em",
       tight: "-0.025em",
@@ -983,5 +987,5 @@ module.exports = {
     "active",
     "disabled",
   ],
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };
